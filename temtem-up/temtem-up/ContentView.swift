@@ -74,21 +74,28 @@ struct TypeList: View {
                 ForEach(type) { type in
                     TemtemTypeView(imageName: type.id)
                 }
-            } .padding(10)
+            } .padding(20)
                 .background {
                     RoundedRectangle(cornerRadius: 10)
                         .trim(from: animationTick ? 0 : 1, to: 1) // we changed this a little bit
                         .stroke()
                         .foregroundColor(.red)
+                        .padding(10)
                 }.onReceive(timer) { _ in
                     withAnimation(.linear(duration: 3)) {
                         animationTick.toggle()
                     }
                 }
            
-        }.padding(10)
+        }
+        .background(content: {
+            RoundedRectangle(cornerRadius: 10)
+                .fill(Color("background"))
+            
+            
+        })
+        .padding(10)
     }
-    
 }
 
 struct TemtemTypeView: View {
@@ -96,6 +103,12 @@ struct TemtemTypeView: View {
     
     var body: some View {
         Image(imageName)
+            .padding(10)
+            .shimmer(withConfig: .init(tint: .yellow, highlight: .white.opacity(0.5), blur: 5))
+            .background(content: {
+                RoundedRectangle(cornerRadius: 15.0, style: .continuous)
+                    .fill(.blue.gradient)
+            })
     }
 }
 

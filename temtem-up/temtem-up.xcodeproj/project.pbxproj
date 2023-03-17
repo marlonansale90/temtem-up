@@ -14,6 +14,7 @@
 		A92E3D5F29C4681100A99522 /* temtem_upTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92E3D5E29C4681100A99522 /* temtem_upTests.swift */; };
 		A92E3D6929C4681100A99522 /* temtem_upUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92E3D6829C4681100A99522 /* temtem_upUITests.swift */; };
 		A92E3D6B29C4681100A99522 /* temtem_upUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92E3D6A29C4681100A99522 /* temtem_upUITestsLaunchTests.swift */; };
+		A92E3D7929C4C0C500A99522 /* Shimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92E3D7829C4C0C500A99522 /* Shimmer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		A92E3D6429C4681100A99522 /* temtem-upUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "temtem-upUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A92E3D6829C4681100A99522 /* temtem_upUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = temtem_upUITests.swift; sourceTree = "<group>"; };
 		A92E3D6A29C4681100A99522 /* temtem_upUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = temtem_upUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A92E3D7829C4C0C500A99522 /* Shimmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shimmer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 		A92E3D4C29C4681000A99522 /* temtem-up */ = {
 			isa = PBXGroup;
 			children = (
+				A92E3D7729C4C0BD00A99522 /* Helpers */,
 				A92E3D4D29C4681000A99522 /* temtem_upApp.swift */,
 				A92E3D4F29C4681000A99522 /* ContentView.swift */,
 				A92E3D5129C4681100A99522 /* Assets.xcassets */,
@@ -125,6 +128,14 @@
 				A92E3D6A29C4681100A99522 /* temtem_upUITestsLaunchTests.swift */,
 			);
 			path = "temtem-upUITests";
+			sourceTree = "<group>";
+		};
+		A92E3D7729C4C0BD00A99522 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A92E3D7829C4C0C500A99522 /* Shimmer.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A92E3D5029C4681000A99522 /* ContentView.swift in Sources */,
+				A92E3D7929C4C0C500A99522 /* Shimmer.swift in Sources */,
 				A92E3D4E29C4681000A99522 /* temtem_upApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
