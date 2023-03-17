@@ -67,15 +67,18 @@ struct TypeList: View {
     private let timer = Timer.publish(every: 3.5, on: .main, in: .common).autoconnect()
         
     @State var animationTick = true
+    @State var selectedType: TemtemType? = nil
     
     var body: some View {
         ScrollView {
             LazyVGrid(columns: columns) {
                 ForEach(type) { type in
-                    TemtemTypeView(imageName: type.id)
+                    TemtemTypeView(imageName: type.id).onTapGesture {
+                        selectedType = type
+                    }
                 }
             } .padding(20)
-                .background {
+              .background {
                     RoundedRectangle(cornerRadius: 10)
                         .trim(from: animationTick ? 0 : 1, to: 1) // we changed this a little bit
                         .stroke()
@@ -86,7 +89,11 @@ struct TypeList: View {
                         animationTick.toggle()
                     }
                 }
-           
+            
+            if let type = selectedType {
+               TemtemSelectedTypeView(type: type)
+            
+            }
         }
         .background(content: {
             RoundedRectangle(cornerRadius: 10)
@@ -95,6 +102,20 @@ struct TypeList: View {
             
         })
         .padding(10)
+    }
+}
+
+struct TemtemSelectedTypeView: View {
+    let type: TemtemType
+    
+    var body: some View {
+        VStack {
+            Image(type.id)
+                .padding(10)
+            Text(type.name)
+                .shimmer(withConfig: .init(tint: .red, highlight: .white.opacity(0.5)))
+                .foregroundColor(.red)
+        }
     }
 }
 
