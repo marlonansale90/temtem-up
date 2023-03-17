@@ -82,7 +82,7 @@ struct TypeList: View {
                     RoundedRectangle(cornerRadius: 10)
                         .trim(from: animationTick ? 0 : 1, to: 1) // we changed this a little bit
                         .stroke()
-                        .foregroundColor(.red)
+                        .foregroundColor(.yellow)
                         .padding(10)
                 }.onReceive(timer) { _ in
                     withAnimation(.linear(duration: 3)) {
@@ -91,15 +91,12 @@ struct TypeList: View {
                 }
             
             if let type = selectedType {
-               TemtemSelectedTypeView(type: type)
-            
+                TemtemSelectedTypeView(type: type)
             }
         }
         .background(content: {
             RoundedRectangle(cornerRadius: 10)
                 .fill(Color("background"))
-            
-            
         })
         .padding(10)
     }
@@ -113,9 +110,14 @@ struct TemtemSelectedTypeView: View {
             Image(type.id)
                 .padding(10)
             Text(type.name)
-                .shimmer(withConfig: .init(tint: .red, highlight: .white.opacity(0.5)))
-                .foregroundColor(.red)
+                .foregroundColor(.yellow)
         }
+        .padding(20)
+        .background {
+            RoundedRectangle(cornerRadius: 15.0, style: .continuous)
+                .fill(.blue.gradient)
+        }
+        .animation(.easeInOut(duration: 0.5), value: type.id)
     }
 }
 
@@ -132,8 +134,6 @@ struct TemtemTypeView: View {
             })
     }
 }
-
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
