@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct temtem_upApp: App {
+    private lazy var baseURL = URL(string: "https://temtem-api.mael.tech")!
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
     }
+    
 }
